@@ -7,18 +7,20 @@ export const useSurah = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
 
-    useEffect(() => {
-        async function loadSurahs() {
-            try {
-                const data = await fetchAllSurahs()
-                setSurahs(data)
-            } catch (error) {
-                setError("Gagal fetch data surat")
-                setSurahs([])
-            } finally {
-                setLoading(false)
-            }
+    async function loadAllSurah() {
+        try {
+            const data = await fetchAllSurahs()
+            setSurahs(data)
+        } catch (error) {
+            setError("Gagal fetch data surat")
+            setSurahs([])
+        } finally {
+            setLoading(false)
         }
+    }
+
+    useEffect(() => {
+        loadAllSurah()
     }, [])
 
     return { surahs, loading, error }
