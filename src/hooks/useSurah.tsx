@@ -1,5 +1,5 @@
-import { fetchAllSurahs } from "@/api/quranService"
-import type { Surah } from "@/types"
+import { fetchAllSurahs } from "../api/quranService"
+import type { Surah } from "../types"
 import { useEffect, useState } from "react"
 
 export const useSurah = () => {

@@ -18,6 +18,18 @@ export interface SurahNavigation {
     jumlahAyat: number;
 }
 
+export interface SurahDetailData {
+    nama: string;
+    namaLatin: string;
+    jumlahAyat : number;
+    tempatTurun: string;
+    arti: string;
+    deskripsi: string;
+    ayat: Ayat[];
+    suratSelanjutnya: boolean | SurahNavigation;
+    suratSebelumnya: boolean | SurahNavigation;
+}
+
 export interface Ayat {
     nomorAyat: number;
     textArab: string;
@@ -28,15 +40,8 @@ export interface Ayat {
 
 export interface AyatListResponse {
     code: number;
-    nama: string;
-    namaLatin: string;
-    jumlahAyat : number;
-    tempatTurun: string;
-    arti: string;
-    deskripsi: string;
-    ayat: Ayat[];
-    suratSelanjutnya: boolean | SurahNavigation;
-    suratSebelumnya: boolean | SurahNavigation;
+    message: string;
+    data: SurahDetailData;
 }
 
 export interface SurahListResponse {
