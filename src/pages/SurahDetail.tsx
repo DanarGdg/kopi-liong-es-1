@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'; 
 import { fetchAllAyat } from '../api/quranService'; 
-import { AyatListResponse } from '../types'; 
+import type { AyatListResponse } from '@/types';
 
 export default function SurahDetail() {
   const { nomor } = useParams<{ nomor: string }>();

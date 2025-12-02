@@ -1,15 +1,9 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import '../App.css'
 import { Input } from '../components/ui/input'
 import { useSurah } from '../hooks/useSurah'
 import {
   Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
 } from "../components/ui/card"
 
 function Home() {
@@ -36,13 +30,9 @@ function Home() {
   }
 
   function truncateText(text: string, maxLength = 11) {
-    // Memeriksa apakah panjang teks melebihi batas maksimum
     if (text.length > maxLength) {
-      // Jika ya, potong teks dari awal (indeks 0) sampai batas maksimum
-      // dan tambahkan elipsis "..." di belakangnya.
       return text.substring(0, maxLength) + '...';
     } else {
-      // Jika tidak melebihi batas, kembalikan teks asli apa adanya.
       return text;
     }
   }
@@ -65,7 +55,7 @@ function Home() {
             <Card className='w-[350px] px-5 py-3'>
                 <div className='flex items-start justify-between'>
                   <div className='flex items-start gap-3 w-full min-w-0'>
-                    <div className='flex-shrink-0'>
+                    <div className='shrink-0'>
                       <svg
                         width="40"
                         height="40"
