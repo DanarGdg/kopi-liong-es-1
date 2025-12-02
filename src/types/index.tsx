@@ -26,15 +26,18 @@ export interface SurahDetailData {
     arti: string;
     deskripsi: string;
     ayat: Ayat[];
-    suratSelanjutnya: boolean | SurahNavigation;
-    suratSebelumnya: boolean | SurahNavigation;
+    suratSelanjutnya: false | SurahNavigation;
+    suratSebelumnya: false | SurahNavigation;
 }
 
 export interface Ayat {
     nomorAyat: number;
-    textArab: string;
+    teksArab: string;
     teksLatin: string;
-    textIndonesia: string;
+    teksIndonesia: string;
+    audio: {
+        [key: string]: string;
+    };
 }
 
 
