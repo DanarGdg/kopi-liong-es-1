@@ -13,6 +13,12 @@ export default function SurahDetail() {
   const [playingAyat, setPlayingAyat] = useState<number | null>(null);
 
   useEffect(() => {
+    if (detail?.data) {
+      document.title = `Surat ${detail.data.namaLatin} | Al-Qur'an Digital`;
+    }
+  }, [detail]);
+  
+  useEffect(() => {
     window.scrollTo(0, 0);
 
     const getDetail = async () => {

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import { Input } from '../components/ui/input';
@@ -9,6 +9,10 @@ import { Card } from "../components/ui/card";
 function Home() {
   const { surahs, loading, error } = useSurah();
   const [search, setSearch] = useState<string>("");
+
+   useEffect(() => {
+    document.title = "Al-Qur'an Digital - Kelompok Kopi Liong Es 1";
+  }, []);
 
   const filteredSurahs = useMemo(() => {
     if (!search) {
